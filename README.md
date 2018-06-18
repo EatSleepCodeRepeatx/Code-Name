@@ -1,2 +1,1 @@
-
-This is a team project for one of my computer science class at the Buffalo University
+This is the final project for my computer science course. 
