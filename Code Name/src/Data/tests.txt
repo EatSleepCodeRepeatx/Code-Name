@@ -1,0 +1,60 @@
+Test methods:
+
+1) Defines a Board class contains 25 Location instances [6 points]
+JUnit test(s): 
+	1) allPosAreMatched() in BoardTest.java
+
+2) Correctly reads codenames from a file named GameWords.txt and stores them in a List [10 points] (sample files you can use are here and here)
+JUnit test(s):
+	1) readsFileCorrectly() in CodewordsListTest.java
+	2) readsMalformedFile() in CodewordsListTest.java
+	3) readsNoFile() in CodewordsListTest.java
+
+3) Creates List containing 25 distinct codenames selected at random [10 points] (hint: Java has some methods that could be a starting point for your implementation)
+JUnit test(s):
+	1) generatesListCorrectly() in CodewordsListTest.java
+	2) notEnoughCodewords() in CodewordsListTest.java
+	3) listIsShuffled() in CodewordsListTest.java
+	
+4) Creates List containing randomly generated assignments for each of the 9 Red Agents, 8 Blue Agents, 7 Innocent Bystanders, and 1 Assassin [10 points] (hint: Java has some methods that could be a starting point for how to randomly order locations)
+JUnit test(s):
+	1) assignsPeople() in Board.java
+	2) listOfAssignmentsShuffled() in Board.java
+	
+5) When game started, it is Red team's move and each of Board's 25 Location instances is assigned a codename, Person, and is Not Revealed [15 points]
+JUnit test(s):
+	1) redsTurn() in GameTest.java
+	2) locationsHaveCodenames() in GameTest.java
+	
+6) Method defined which correctly returns if a clue is legal or illegal (clues cannot equal a current codename unless that codename is in a locations that was already Revealed) [10 points]
+JUnit test(s):
+	1) clueIsLegal() in GameTest.java
+	
+7) Method defined which decrements the count, updates a Location when the Location's codename was selected, and returns if the Location contained the current team's Agent [10 points]
+JUnit test(s):
+	1) countDecreased() in GameTest.java
+	2) locationIsUpdated() in GameTest.java
+	3) containsCurrentTeam() in GameTest.java
+	
+8) Method defined which correctly returns whether or not the Board is in one of the winning states [15 points]
+	1) checkBlueTeamRevealed in GameTest.java
+	2) checkRedTeamRevealed() in GameTest.java
+
+9) Method defined which correctly returns which team did not lose (i.e., win) when the Assassin was revealed [10 points]
+	1) whoWinsWhenAssassinRevealed() in GameTest.java
+
+3-team variant test methods:
+10) Creates a List containing randomly generated assignments for each of the 6 Red Agents, 5 Blue Agents, 5 Green Agents, 7 Innocent Bystanders, and 2 Assassins
+	1) listOfAssignmentsShuffled() (tests Board.generatePersonAssignment())
+	
+11) Method defined which correctly returns whether or not the Board is in one of the winning states [5 points]
+	1) checkRedTeamRevealed() (tests gameWon())
+	2) checkBlueTeamRevealed() (tests gameWon())
+	3) checkGreenTeamRevealed() (tests gameWon())
+	
+12) Method defined which correctly returns which team wins once the 2nd Assassin is revealed [8 points]
+	1) correctWinningTeamAfterLastAssassinTest() (tests gameWon(), getWinningTeam()) 
+	
+13)  Method which returns which is used at the end of a turn to determine the team whose move is next 
+(this must include the possibility that the next team in the 3-team rotation had previously Revealed an Assassin)
+	1) correctTeamAfterTurnEndsTest() (tests Game.turn())
