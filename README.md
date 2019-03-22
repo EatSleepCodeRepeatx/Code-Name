@@ -1,2 +1,2 @@
-#GUI Project 
-Gui Game
+# GUI Game Design
+GUI Project
